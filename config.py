@@ -1,0 +1,92 @@
+class Config:
+    # 顶端进度条需要忽略的监听目标
+    exclude_props = [
+        'side-menu.style',
+        'fold-side-menu-icon.icon'
+    ]
+
+    # 定义侧边菜单树状结构数据
+    menuItems = [
+        {
+            'component': 'ItemGroup',
+            'props': {
+                'key': '/',
+                'title': '快速入门'
+            },
+            'children': [
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/what-is-fmc',
+                        'href': '/what-is-fmc',
+                        'title': 'fmc是什么？'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/getting-started',
+                        'href': '/getting-started',
+                        'title': 'Dash+fmc 快速上手'
+                    }
+                }
+            ]
+        },
+        {
+            'component': 'ItemGroup',
+            'props': {
+                'key': '/',
+                'title': '更多用法'
+            },
+            'children': [
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/change-code-theme',
+                        'href': '/change-code-theme',
+                        'title': '切换代码主题'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/render-latex',
+                        'href': '/render-latex',
+                        'title': '渲染LaTeX公式'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/render-raw-html',
+                        'href': '/render-raw-html',
+                        'title': '渲染原生HTML'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/change-link-target',
+                        'href': '/change-link-target',
+                        'title': '改变链接打开方式'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/custom-code-block-style',
+                        'href': '/custom-code-block-style',
+                        'title': '自定义代码块样式'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/all-props',
+                        'href': '/all-props',
+                        'title': '完整参数列表'
+                    }
+                },
+            ]
+        }
+    ]
