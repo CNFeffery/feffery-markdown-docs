@@ -14,6 +14,7 @@ from views import (
     render_raw_html,
     change_link_target,
     custom_code_block_style,
+    render_image,
     all_props
 )
 
@@ -280,6 +281,9 @@ def render_docs_content(pathname):
 
     elif pathname == '/custom-code-block-style':
         return custom_code_block_style.docs_content, pathname
+
+    elif pathname == '/render-image':
+        return render_image.docs_content, pathname
 
     elif pathname == '/all-props':
         return all_props.docs_content, pathname

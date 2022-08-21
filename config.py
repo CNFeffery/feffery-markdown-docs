@@ -82,6 +82,14 @@ class Config:
                 {
                     'component': 'Item',
                     'props': {
+                        'key': '/render-image',
+                        'href': '/render-image',
+                        'title': '渲染图片内容'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
                         'key': '/all-props',
                         'href': '/all-props',
                         'title': '完整参数列表'
