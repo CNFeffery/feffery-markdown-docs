@@ -1,4 +1,5 @@
 import dash
+from flask import request
 
 
 class CustomDash(dash.Dash):
@@ -27,3 +28,15 @@ app = CustomDash(
 app.title = 'feffery-markdown-components在线文档'
 
 server = app.server
+
+@app.server.route('/safe-redirect')
+def safe_redirect():
+
+    target = request.args.get('target')
+
+    return f'''
+<div style="padding: 25px 20px; position: fixed; top: 35vh; left: 50vw; border: 1px solid #f0f0f0; transform: translate(-50%, -50%);">
+    <span >检测到未知的外部链接，请谨慎访问：</ span>
+    <a href="{target}">{target}</ a>
+</ div>
+'''

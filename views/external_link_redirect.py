@@ -11,14 +11,13 @@ docs_content = html.Div(
                     duration=0.6
                 ),
 
-
                 fac.AntdBreadcrumb(
                     items=[
                         {
                             'title': '更多用法'
                         },
                         {
-                            'title': '渲染LaTeX公式'
+                            'title': '外部链接安全跳转'
                         }
                     ]
                 ),
@@ -28,31 +27,34 @@ docs_content = html.Div(
                 fac.AntdParagraph(
                     [
                         fac.AntdText('　　fmc', strong=True),
-                        fac.AntdText('中支持渲染基于LaTeX的行内公式与块公式，其中字符串需要前缀'),
-                        fac.AntdText('r', code=True),
-                        fac.AntdText('从而避免转义，具体使用参考下面的例子：'),
+                        fac.AntdText('针对文档渲染内容中的外部链接，可轻松进行安全跳转提示功能（譬如知乎中针对外链的点击跳转策略）：')
                     ]
                 ),
 
                 html.Div(
                     [
                         fmc.FefferyMarkdown(
-                            markdownStr=r'''
-　　这是行LaTeX公式示例：$E=mc^2$
+                            checkExternalLink=True,
+                            externalLinkPrefixWhiteList=['http://fac.feffery.tech'],
+                            safeRedirectUrlPrefix='/safe-redirect?target=',
+                            markdownStr='''
+- 内部链接正常跳转
 
-　　这是块LaTeX公式示例：
+[内部链接示例](/what-is-fmc)
 
-$$
+- 非白名单外部链接中转提示跳转
 
-\lim_{x \to \infty} \frac{1}{n(n+1)}
+[非白名单外部链接示例](https://github.com/CNFeffery/feffery-markdown-components)
 
-$$
+- 白名单外部链接正常跳转
+
+[白名单外部链接示例](http://fac.feffery.tech/what-is-fac)
 
 '''
                         ),
 
                         fac.AntdDivider(
-                            '利用fmc渲染LaTeX公式',
+                            '外部链接安全跳转',
                             lineColor='#f0f0f0',
                             innerTextOrientation='left'
                         ),
@@ -62,17 +64,38 @@ $$
                                 showLineNumbers=True,
                                 language='python',
                                 codeString="""
+from flask import request
+
+@app.server.route('/safe-redirect')
+def safe_redirect():
+
+    target = request.args.get('target')
+
+    return f'''
+<div style="padding: 25px 20px; position: fixed; top: 35vh; left: 50vw; border: 1px solid #f0f0f0; transform: translate(-50%, -50%);">
+    <span >检测到未知的外部链接，请谨慎访问：</ span>
+    <a href="{target}">{target}</ a>
+</ div>
+'''
+
+...
+
 fmc.FefferyMarkdown(
-    markdownStr=r'''
-　　这是行LaTeX公式示例：$E=mc^2$
+    checkExternalLink=True,
+    externalLinkPrefixWhiteList=['http://fac.feffery.tech'],
+    safeRedirectUrlPrefix='/safe-redirect?target=',
+    markdownStr='''
+- 内部链接正常跳转
 
-　　这是块LaTeX公式示例：
+[内部链接示例](/what-is-fmc)
 
-$$
+- 非白名单外部链接中转提示跳转
 
-\lim_{x \to \infty} \frac{1}{n(n+1)}
+[非白名单外部链接示例](https://github.com/CNFeffery/feffery-markdown-components)
 
-$$
+- 白名单外部链接正常跳转
+
+[白名单外部链接示例](http://fac.feffery.tech/what-is-fac)
 
 '''
 )
@@ -88,7 +111,7 @@ $$
                         'padding': '10px 10px 20px 10px',
                         'border': '1px solid #f0f0f0'
                     },
-                    id='利用fmc渲染LaTeX公式',
+                    id='外部链接安全跳转',
                     className='div-highlight'
                 ),
 
@@ -101,7 +124,7 @@ $$
         html.Div(
             fac.AntdAnchor(
                 linkDict=[
-                    {'title': '利用fmc渲染LaTeX公式', 'href': '#利用fmc渲染LaTeX公式'}
+                    {'title': '外部链接安全跳转', 'href': '#外部链接安全跳转'}
                 ],
                 offsetTop=0
             ),

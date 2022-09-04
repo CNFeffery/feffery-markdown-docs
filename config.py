@@ -2,7 +2,8 @@ class Config:
     # 顶端进度条需要忽略的监听目标
     exclude_props = [
         'side-menu.style',
-        'fold-side-menu-icon.icon'
+        'fold-side-menu-icon.icon',
+        'markdown-base-theme-demo.markdownBaseClassName'
     ]
 
     # 定义侧边菜单树状结构数据
@@ -58,6 +59,14 @@ class Config:
                 {
                     'component': 'Item',
                     'props': {
+                        'key': '/support-gfm',
+                        'href': '/support-gfm',
+                        'title': '支持GFM语法'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
                         'key': '/render-raw-html',
                         'href': '/render-raw-html',
                         'title': '渲染原生HTML'
@@ -85,6 +94,30 @@ class Config:
                         'key': '/render-image',
                         'href': '/render-image',
                         'title': '渲染图片内容'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/custom-element-style',
+                        'href': '/custom-element-style',
+                        'title': '自定义各元素样式'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/use-external-theme',
+                        'href': '/use-external-theme',
+                        'title': '使用拓展主题'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/external-link-redirect',
+                        'href': '/external-link-redirect',
+                        'title': '外部链接安全跳转'
                     }
                 },
                 {

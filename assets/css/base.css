@@ -71,3 +71,7 @@ div {
 .ant-menu-vertical-left {
   border-right: none !important;
 }
+
+code {
+  white-space: pre-wrap !important;
+}

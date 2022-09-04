@@ -18,7 +18,7 @@ docs_content = html.Div(
                             'title': '更多用法'
                         },
                         {
-                            'title': '渲染LaTeX公式'
+                            'title': '支持GFM语法'
                         }
                     ]
                 ),
@@ -28,9 +28,13 @@ docs_content = html.Div(
                 fac.AntdParagraph(
                     [
                         fac.AntdText('　　fmc', strong=True),
-                        fac.AntdText('中支持渲染基于LaTeX的行内公式与块公式，其中字符串需要前缀'),
-                        fac.AntdText('r', code=True),
-                        fac.AntdText('从而避免转义，具体使用参考下面的例子：'),
+                        fac.AntdText('支持'),
+                        fac.AntdText('GFM', strong=True),
+                        fac.AntdText(
+                            '（GitHub Flavored Markdown）',
+                            italic=True
+                        ),
+                        fac.AntdText('中的常用语法：')
                     ]
                 ),
 
@@ -38,21 +42,32 @@ docs_content = html.Div(
                     [
                         fmc.FefferyMarkdown(
                             markdownStr=r'''
-　　这是行LaTeX公式示例：$E=mc^2$
+## 自动识别链接
 
-　　这是块LaTeX公式示例：
+www.example.com, https://example.com, and contact@example.com.
 
-$$
+## 删除线
 
-\lim_{x \to \infty} \frac{1}{n(n+1)}
+~one~ or ~~two~~ tildes.
 
-$$
+## 表格
+
+| a | b  |  c |  d  |
+| - | :- | -: | :-: |
+| 1 | 2  |  3 |  4  |
+| 5 | 6  |  7 |  8  |
+| 9 | 10  |  11 |  12  |
+
+## 待办事项
+
+* [ ] to do
+* [x] done
 
 '''
                         ),
 
                         fac.AntdDivider(
-                            '利用fmc渲染LaTeX公式',
+                            '在fmc中直接使用GFM语法',
                             lineColor='#f0f0f0',
                             innerTextOrientation='left'
                         ),
@@ -64,15 +79,26 @@ $$
                                 codeString="""
 fmc.FefferyMarkdown(
     markdownStr=r'''
-　　这是行LaTeX公式示例：$E=mc^2$
+## 自动识别链接
 
-　　这是块LaTeX公式示例：
+www.example.com, https://example.com, and contact@example.com.
 
-$$
+## 删除线
 
-\lim_{x \to \infty} \frac{1}{n(n+1)}
+~one~ or ~~two~~ tildes.
 
-$$
+## 表格
+
+| a | b  |  c |  d  |
+| - | :- | -: | :-: |
+| 1 | 2  |  3 |  4  |
+| 5 | 6  |  7 |  8  |
+| 9 | 10  |  11 |  12  |
+
+## 待办事项
+
+* [ ] to do
+* [x] done
 
 '''
 )
@@ -88,7 +114,7 @@ $$
                         'padding': '10px 10px 20px 10px',
                         'border': '1px solid #f0f0f0'
                     },
-                    id='利用fmc渲染LaTeX公式',
+                    id='在fmc中直接使用GFM语法',
                     className='div-highlight'
                 ),
 
@@ -101,7 +127,7 @@ $$
         html.Div(
             fac.AntdAnchor(
                 linkDict=[
-                    {'title': '利用fmc渲染LaTeX公式', 'href': '#利用fmc渲染LaTeX公式'}
+                    {'title': '在fmc中直接使用GFM语法', 'href': '#在fmc中直接使用GFM语法'}
                 ],
                 offsetTop=0
             ),

@@ -11,7 +11,6 @@ docs_content = html.Div(
                     duration=0.6
                 ),
 
-
                 fac.AntdBreadcrumb(
                     items=[
                         {
@@ -45,6 +44,12 @@ docs_content = html.Div(
 <span style="display:block;text-align:right;color:orangered;">橙色居右</span>
 <span style="display:block;text-align:center;color:orangered;">橙色居中</span>
 
+<details><summary>点我展开</summary>
+
+这是可展开内容测试巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+
+</details>
+
 '''
                         ),
 
@@ -57,6 +62,12 @@ docs_content = html.Div(
                             markdownStr='''
 <span style="display:block;text-align:right;color:orangered;">橙色居右</span>
 <span style="display:block;text-align:center;color:orangered;">橙色居中</span>
+
+<details><summary>点我展开</summary>
+
+这是可展开内容测试巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+
+</details>
 
 '''
                         ),
@@ -81,6 +92,12 @@ fmc.FefferyMarkdown(
 <span style="display:block;text-align:right;color:orangered;">橙色居右</span>
 <span style="display:block;text-align:center;color:orangered;">橙色居中</span>
 
+<details><summary>点我展开</summary>
+
+这是可展开内容测试巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+
+</details>
+
 '''
 ),
 
@@ -93,6 +110,12 @@ fmc.FefferyMarkdown(
     markdownStr='''
 <span style="display:block;text-align:right;color:orangered;">橙色居右</span>
 <span style="display:block;text-align:center;color:orangered;">橙色居中</span>
+
+<details><summary>点我展开</summary>
+
+这是可展开内容测试巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+
+</details>
 
 '''
 )

@@ -1,0 +1,355 @@
+/*
+ * Copyright (C) 2018 Drake, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * GitHub https://github.com/liangjingkanji/DrakeTyporaTheme
+ */
+@import url(./drake/font.css);
+
+.theme-drake code,
+tt {
+  margin: 0 2px;
+  color: #d63200;
+}
+
+.theme-drake blockquote:before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 4px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #e95f59;
+  border-radius: 2px;
+}
+
+.theme-drake blockquote {
+  color: #333333;
+  border-radius: 2px;
+  padding: 10px 16px;
+  background-color: #fdefee;
+  position: relative;
+  border-left: none;
+}
+
+.theme-drake strong {
+  color: #273849;
+  font-weight: bold;
+}
+.theme-drake blockquote strong {
+  color: #333333;
+}
+
+.theme-drake a {
+  color: #d63200;
+  text-decoration: none;
+  border-bottom: 0.2rem solid #d63200;
+}
+
+.theme-drake img {
+  border-left: none;
+  border-right: none;
+  vertical-align: baseline;
+  border-radius: 2px;
+}
+
+.theme-drake {
+  margin: 0 auto;
+  padding: 20px 30px 100px;
+}
+
+.theme-drake > ul:first-child,
+.theme-drake > ol:first-child {
+  margin-top: 30px;
+}
+
+.theme-drake h1,
+.theme-drake h2,
+.theme-drake h3,
+.theme-drake h4,
+.theme-drake h5,
+.theme-drake h6 {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+  cursor: text;
+  color: #273849;
+  display: table;
+}
+
+.theme-drake h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+.theme-drake h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 0.2rem solid #273849;
+  line-height: 3rem;
+}
+
+.theme-drake h3 {
+  font-size: 1.4rem;
+}
+
+.theme-drake h4 {
+  font-size: 1.2rem;
+}
+
+.theme-drake h5 {
+  font-size: 1rem;
+}
+
+.theme-drake h6 {
+  font-size: 1rem;
+}
+
+.theme-drake h1 tt,
+.theme-drake h1 code {
+  font-size: inherit !important;
+}
+
+.theme-drake h2 tt,
+.theme-drake h2 code {
+  font-size: inherit !important;
+}
+
+.theme-drake h3 tt,
+.theme-drake h3 code {
+  font-size: inherit !important;
+}
+
+.theme-drake h4 tt,
+.theme-drake h4 code {
+  font-size: inherit !important;
+}
+
+.theme-drake h5 tt,
+.theme-drake h5 code {
+  font-size: inherit !important;
+}
+
+.theme-drake h6 tt,
+.theme-drake h6 code {
+  font-size: inherit !important;
+}
+
+.theme-drake p,
+.theme-drake blockquote,
+.theme-drake ul,
+.theme-drake ol,
+.theme-drake dl,
+.theme-drake table {
+  margin: 0;
+}
+
+.theme-drake li > ol,
+.theme-drake li > ul {
+  margin: 0 0;
+}
+.theme-drake li {
+  margin: 0.5em 0;
+}
+
+.theme-drake hr {
+  height: 2px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #273849;
+  border: 0 none;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+.theme-drake a:first-child h1,
+.theme-drake a:first-child h2,
+.theme-drake a:first-child h3,
+.theme-drake a:first-child h4,
+.theme-drake a:first-child h5,
+.theme-drake a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.theme-drake h1 p,
+.theme-drake h2 p,
+.theme-drake h3 p,
+.theme-drake h4 p,
+.theme-drake h5 p,
+.theme-drake h6 p {
+  margin-top: 0;
+}
+
+.theme-drake ul,
+.theme-drake ol {
+  padding-inline-start: 2em;
+}
+
+.theme-drake ul:first-child,
+.theme-drake ol:first-child {
+  margin-top: 0;
+}
+
+.theme-drake ul:last-child,
+.theme-drake ol:last-child {
+  margin-bottom: 0;
+}
+
+.theme-drake table tr {
+  border-top: 0.1em solid #dfe2e5;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-drake table th {
+  font-weight: bold;
+  border: 0.1em solid #dfe2e5;
+  border-bottom: 0;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.theme-drake table td {
+  border: 0.1em solid #dfe2e5;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+.theme-drake table thead {
+  background-color: #f8f8f8;
+}
+
+.theme-drake table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.theme-drake table tr th:first-child,
+.theme-drake table tr td:first-child {
+  margin-top: 0;
+}
+
+.theme-drake table tr th:last-child,
+.theme-drake table tr td:last-child {
+  margin-bottom: 0;
+}
+
+.theme-drake em {
+  padding: 0 5px 0 2px;
+}
+
+/* height light */
+.theme-drake mark {
+  border: 0.1em solid #d63200;
+  color: #d63200;
+  background-color: transparent;
+  padding: 0.1rem 0.5rem;
+  border-radius: 2rem;
+  margin: 0 0.2rem;
+  font-size: 0.95rem;
+}
+
+.theme-drake .highlight pre,
+.theme-drake pre {
+  padding: 0 !important;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+
+.theme-drake *::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  outline: none;
+  border-radius: 6px;
+}
+
+.theme-drake *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/*火狐浏览器*/
+.theme-drake * {
+  scrollbar-width: thin;
+}
+
+.theme-drake .contains-task-list {
+  list-style-type: none;
+}
+
+.theme-drake .task-list-item {
+  position: relative;
+}
+
+.theme-drake .task-list-item > input:checked:before,
+.theme-drake .task-list-item > input[checked]:before {
+  background: rgb(101, 183, 59);
+  border-width: 1px;
+  border: 2px solid rgb(101, 183, 59);
+}
+
+.theme-drake .task-list-item > input:before {
+  border: 2px solid rgb(102, 102, 102);
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  content: " ";
+  transition: background-color 200ms ease-in-out;
+  display: block;
+}
+
+.theme-drake .task-list-item > input:checked:after,
+.theme-drake .task-list-item > input[checked]:after {
+  opacity: 1;
+}
+
+.theme-drake .task-list-item > input:after {
+  opacity: 1;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 0.25rem;
+  left: 0.19rem;
+  width: 0.6rem;
+  height: 0.375rem;
+  border: 2px solid white;
+  border-top: 0;
+  border-right: 0;
+  content: " ";
+  opacity: 0;
+}
+
+.theme-drake .task-list-item > input,
+.theme-drake .task-list-item > input[type="checkbox"] {
+  margin-left: -1.6rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.theme-drake .task-list-item > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: -1.2em;
+  margin-top: calc(1em - 11px);
+  border: none;
+}

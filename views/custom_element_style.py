@@ -11,14 +11,13 @@ docs_content = html.Div(
                     duration=0.6
                 ),
 
-
                 fac.AntdBreadcrumb(
                     items=[
                         {
                             'title': '更多用法'
                         },
                         {
-                            'title': '渲染LaTeX公式'
+                            'title': '自定义各元素样式'
                         }
                     ]
                 ),
@@ -28,31 +27,42 @@ docs_content = html.Div(
                 fac.AntdParagraph(
                     [
                         fac.AntdText('　　fmc', strong=True),
-                        fac.AntdText('中支持渲染基于LaTeX的行内公式与块公式，其中字符串需要前缀'),
-                        fac.AntdText('r', code=True),
-                        fac.AntdText('从而避免转义，具体使用参考下面的例子：'),
+                        fac.AntdText('中支持对渲染结果中主要的一些网页元素单独统一设置css样式或类，以自定义标题样式为例：')
                     ]
                 ),
 
                 html.Div(
                     [
                         fmc.FefferyMarkdown(
+                            h1Style={
+                                'backgroundImage': 'linear-gradient(to right, orange, purple)',
+                                'color': 'transparent',
+                                'display': 'inline-table',
+                                '-webkit-background-clip': 'text'
+                            },
+                            h2Style={
+                                'borderBottom': '3px solid #1890ff',
+                                'fontFamily': 'KaiTi',
+                                'textAlign': 'center',
+                                'margin': '0 auto',
+                                'display': 'table'
+                            },
+                            h3Style={
+                                'color': 'transparent',
+                                '-webkit-text-stroke': '1px black',
+                                'letterSpacing': '0.04em'
+                            },
                             markdownStr=r'''
-　　这是行LaTeX公式示例：$E=mc^2$
+# 一级标题
 
-　　这是块LaTeX公式示例：
+## 二级标题
 
-$$
-
-\lim_{x \to \infty} \frac{1}{n(n+1)}
-
-$$
-
+### 三级标题
 '''
                         ),
 
                         fac.AntdDivider(
-                            '利用fmc渲染LaTeX公式',
+                            '以标题样式自定义为例',
                             lineColor='#f0f0f0',
                             innerTextOrientation='left'
                         ),
@@ -63,17 +73,30 @@ $$
                                 language='python',
                                 codeString="""
 fmc.FefferyMarkdown(
+    h1Style={
+        'backgroundImage': 'linear-gradient(to right, orange, purple)',
+        'color': 'transparent',
+        'display': 'inline-table',
+        '-webkit-background-clip': 'text'
+    },
+    h2Style={
+        'borderBottom': '3px solid #1890ff',
+        'fontFamily': 'KaiTi',
+        'textAlign': 'center',
+        'margin': '0 auto',
+        'display': 'table'
+    },
+    h3Style={
+        'color': 'transparent',
+        '-webkit-text-stroke': '1px black',
+        'letterSpacing': '0.04em'
+    },
     markdownStr=r'''
-　　这是行LaTeX公式示例：$E=mc^2$
+# 一级标题
 
-　　这是块LaTeX公式示例：
+## 二级标题
 
-$$
-
-\lim_{x \to \infty} \frac{1}{n(n+1)}
-
-$$
-
+### 三级标题
 '''
 )
 """
@@ -88,7 +111,7 @@ $$
                         'padding': '10px 10px 20px 10px',
                         'border': '1px solid #f0f0f0'
                     },
-                    id='利用fmc渲染LaTeX公式',
+                    id='以标题样式自定义为例',
                     className='div-highlight'
                 ),
 
@@ -101,7 +124,7 @@ $$
         html.Div(
             fac.AntdAnchor(
                 linkDict=[
-                    {'title': '利用fmc渲染LaTeX公式', 'href': '#利用fmc渲染LaTeX公式'}
+                    {'title': '以标题样式自定义为例', 'href': '#以标题样式自定义为例'}
                 ],
                 offsetTop=0
             ),

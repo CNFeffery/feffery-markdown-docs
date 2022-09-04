@@ -11,10 +11,14 @@ from views import (
     getting_started,
     change_code_theme,
     render_latex,
+    support_gfm,
     render_raw_html,
     change_link_target,
     custom_code_block_style,
     render_image,
+    custom_element_style,
+    use_external_theme,
+    external_link_redirect,
     all_props
 )
 
@@ -206,7 +210,7 @@ app.layout = fuc.FefferyTopProgress(
                                 ],
                                 id='side-menu',
                                 style={
-                                    'width': '300px',
+                                    'width': '220px',
                                     'height': '100vh',
                                     'overflowY': 'auto',
                                     'transition': 'width 0.2s',
@@ -273,6 +277,9 @@ def render_docs_content(pathname):
     elif pathname == '/render-latex':
         return render_latex.docs_content, pathname
 
+    elif pathname == '/support-gfm':
+        return support_gfm.docs_content, pathname
+
     elif pathname == '/render-raw-html':
         return render_raw_html.docs_content, pathname
 
@@ -285,6 +292,15 @@ def render_docs_content(pathname):
     elif pathname == '/render-image':
         return render_image.docs_content, pathname
 
+    elif pathname == '/custom-element-style':
+        return custom_element_style.docs_content, pathname
+
+    elif pathname == '/use-external-theme':
+        return use_external_theme.docs_content, pathname
+
+    elif pathname == '/external-link-redirect':
+        return external_link_redirect.docs_content, pathname
+
     elif pathname == '/all-props':
         return all_props.docs_content, pathname
 
@@ -295,7 +311,7 @@ app.clientside_callback(
     '''
     (nClicks, oldStyle) => {
         if (nClicks) {
-            if (oldStyle.width === '300px') {
+            if (oldStyle.width === '220px') {
                 return [
                     {
                         'width': 20,
@@ -310,7 +326,7 @@ app.clientside_callback(
             }
             return [
                 {
-                    'width': '300px',
+                    'width': '220px',
                     'height': '100vh',
                     'transition': 'width 0.2s',
                     'borderRight': '1px solid rgb(240, 240, 240)',
