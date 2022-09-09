@@ -123,6 +123,14 @@ class Config:
                 {
                     'component': 'Item',
                     'props': {
+                        'key': '/auto-render-toc',
+                        'href': '/auto-render-toc',
+                        'title': '自动生成目录'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
                         'key': '/all-props',
                         'href': '/all-props',
                         'title': '完整参数列表'

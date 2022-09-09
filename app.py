@@ -19,6 +19,7 @@ from views import (
     custom_element_style,
     use_external_theme,
     external_link_redirect,
+    auto_render_toc,
     all_props
 )
 
@@ -300,6 +301,9 @@ def render_docs_content(pathname):
 
     elif pathname == '/external-link-redirect':
         return external_link_redirect.docs_content, pathname
+
+    elif pathname == '/auto-render-toc':
+        return auto_render_toc.docs_content, pathname
 
     elif pathname == '/all-props':
         return all_props.docs_content, pathname
