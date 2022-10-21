@@ -1,7 +1,9 @@
 from dash import html
+import feffery_antd_components as fac
 import feffery_utils_components as fuc
 import feffery_markdown_components as fmc
-import feffery_antd_components as fac
+
+from views import side_props
 
 docs_content = html.Div(
     [
@@ -10,7 +12,6 @@ docs_content = html.Div(
                 fac.AntdBackTop(
                     duration=0.6
                 ),
-
 
                 fac.AntdBreadcrumb(
                     items=[
@@ -99,7 +100,8 @@ fmc.FefferyMarkdown(
                 html.Div(style={'height': '100px'})
             ],
             style={
-                'flex': 'auto'
+                'flex': 'auto',
+                'padding': '25px'
             }
         ),
         html.Div(
@@ -112,9 +114,12 @@ fmc.FefferyMarkdown(
             ),
             style={
                 'flex': 'none',
-                'margin': '20px'
+                'padding': '25px'
             }
-        )
+        ),
+
+        # 侧边参数栏
+        side_props.side_props_layout
     ],
     style={
         'display': 'flex'

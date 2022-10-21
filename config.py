@@ -3,7 +3,8 @@ class Config:
     exclude_props = [
         'side-menu.style',
         'fold-side-menu-icon.icon',
-        'markdown-base-theme-demo.markdownBaseClassName'
+        'markdown-base-theme-demo.markdownBaseClassName',
+        'side-props.style'
     ]
 
     # 定义侧边菜单树状结构数据

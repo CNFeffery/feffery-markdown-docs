@@ -278,6 +278,7 @@ docs_content = html.Div(
         )
     ],
     style={
-        'display': 'flex'
+        'display': 'flex',
+        'padding': '25px'
     }
 )

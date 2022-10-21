@@ -56,7 +56,7 @@ docs_content = html.Div(
             fac.AntdAnchor(
                 linkDict=[
                     {'title': 'fmc中的全部参数',
-                        'href': '#fmc中的全部参数'}
+                     'href': '#fmc中的全部参数'}
                 ],
                 offsetTop=0
             ),
@@ -67,6 +67,7 @@ docs_content = html.Div(
         )
     ],
     style={
-        'display': 'flex'
+        'display': 'flex',
+        'padding': '25px'
     }
 )

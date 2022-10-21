@@ -1,5 +1,5 @@
 dash==2.6.2
 feffery_antd_components==0.1.16
-feffery_markdown_components==0.2.5
-feffery_utils_components==0.0.19
+feffery_markdown_components==0.2.6
+feffery_utils_components==0.0.28
 Flask==2.2.2

@@ -6,6 +6,7 @@ import feffery_antd_components as fac
 from dash.dependencies import Input, Output
 
 from server import app
+from views import side_props
 
 docs_content = html.Div(
     [
@@ -33,7 +34,8 @@ docs_content = html.Div(
                         fac.AntdText('　　fmc', strong=True),
                         fac.AntdText('在设置参数'),
                         fac.AntdText('titleAsId=True', code=True),
-                        fac.AntdText('时，会在渲染后为文档中的所有标题元素添加与其内容一致的id信息，同时会产生出属性值'),
+                        fac.AntdText(
+                            '时，会在渲染后为文档中的所有标题元素添加与其内容一致的id信息，同时会产生出属性值'),
                         fac.AntdText('facAnchorLinkDict', code=True),
                         fac.AntdText('，可利用回调函数直接作为'),
                         fac.AntdText('fac', strong=True),
@@ -181,7 +183,8 @@ def auto_toc_demo(facAnchorLinkDict):
                 html.Div(style={'height': '100px'})
             ],
             style={
-                'flex': 'auto'
+                'flex': 'auto',
+                'padding': '25px'
             }
         ),
         html.Div(
@@ -194,14 +197,18 @@ def auto_toc_demo(facAnchorLinkDict):
             id='anchor-container-demo',
             style={
                 'flex': 'none',
-                'margin': '20px'
+                'padding': '25px'
             }
-        )
+        ),
+
+        # 侧边参数栏
+        side_props.side_props_layout
     ],
     style={
         'display': 'flex'
     }
 )
+
 
 @app.callback(
     Output('toc-anchor-demo', 'children'),

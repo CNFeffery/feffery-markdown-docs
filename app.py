@@ -233,10 +233,7 @@ app.layout = fuc.FefferyTopProgress(
                                 }
                             )
                         ],
-                        flex='auto',
-                        style={
-                            'padding': '25px'
-                        }
+                        flex='auto'
                     ),
 
                     fac.AntdBackTop(
@@ -346,6 +343,46 @@ app.clientside_callback(
      Output('fold-side-menu-icon', 'icon')],
     Input('fold-side-menu', 'nClicks'),
     State('side-menu', 'style')
+)
+
+app.clientside_callback(
+    '''
+    (nClicks, oldStyle) => {
+        if (nClicks) {
+            if (oldStyle.width === '600px') {
+                return [
+                    {
+                        'width': 0,
+                        'height': '100vh',
+                        'borderLeft': '1px solid #f0f0f0',
+                        'padding': '10px',
+                        'position': 'relative',
+                        'background': '#f2f3f5',
+                        'transition': 'width 0.15s ease'
+                    },
+                    'antd-arrow-left'
+                ]
+            }
+            return [
+                {
+                    'width': '600px',
+                    'height': '100vh',
+                    'borderLeft': '1px solid #f0f0f0',
+                    'padding': '20px',
+                    'position': 'relative',
+                    'background': '#f2f3f5',
+                    'transition': 'width 0.4s ease'
+                },
+                'antd-arrow-right'
+            ]
+        }
+        return window.dash_clientside.no_update;
+    }
+    ''',
+    [Output('side-props', 'style'),
+     Output('fold-side-props-icon', 'icon')],
+    Input('fold-side-props', 'nClicks'),
+    State('side-props', 'style')
 )
 
 if __name__ == '__main__':

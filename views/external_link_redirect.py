@@ -3,6 +3,8 @@ import feffery_utils_components as fuc
 import feffery_markdown_components as fmc
 import feffery_antd_components as fac
 
+from views import side_props
+
 docs_content = html.Div(
     [
         html.Div(
@@ -27,7 +29,8 @@ docs_content = html.Div(
                 fac.AntdParagraph(
                     [
                         fac.AntdText('　　fmc', strong=True),
-                        fac.AntdText('针对文档渲染内容中的外部链接，可轻松进行安全跳转提示功能（譬如知乎中针对外链的点击跳转策略）：')
+                        fac.AntdText(
+                            '针对文档渲染内容中的外部链接，可轻松进行安全跳转提示功能（譬如知乎中针对外链的点击跳转策略）：')
                     ]
                 ),
 
@@ -35,7 +38,8 @@ docs_content = html.Div(
                     [
                         fmc.FefferyMarkdown(
                             checkExternalLink=True,
-                            externalLinkPrefixWhiteList=['http://fac.feffery.tech'],
+                            externalLinkPrefixWhiteList=[
+                                'http://fac.feffery.tech'],
                             safeRedirectUrlPrefix='/safe-redirect?target=',
                             markdownStr='''
 - 内部链接正常跳转
@@ -118,7 +122,8 @@ fmc.FefferyMarkdown(
                 html.Div(style={'height': '100px'})
             ],
             style={
-                'flex': 'auto'
+                'flex': 'auto',
+                'padding': '25px'
             }
         ),
         html.Div(
@@ -130,9 +135,12 @@ fmc.FefferyMarkdown(
             ),
             style={
                 'flex': 'none',
-                'margin': '20px'
+                'padding': '25px'
             }
-        )
+        ),
+
+        # 侧边参数栏
+        side_props.side_props_layout
     ],
     style={
         'display': 'flex'

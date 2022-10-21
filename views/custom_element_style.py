@@ -3,6 +3,8 @@ import feffery_utils_components as fuc
 import feffery_markdown_components as fmc
 import feffery_antd_components as fac
 
+from views import side_props
+
 docs_content = html.Div(
     [
         html.Div(
@@ -27,7 +29,8 @@ docs_content = html.Div(
                 fac.AntdParagraph(
                     [
                         fac.AntdText('　　fmc', strong=True),
-                        fac.AntdText('中支持对渲染结果中主要的一些网页元素单独统一设置css样式或类，以自定义标题样式为例：')
+                        fac.AntdText(
+                            '中支持对渲染结果中主要的一些网页元素单独统一设置css样式或类，以自定义标题样式为例：')
                     ]
                 ),
 
@@ -118,7 +121,8 @@ fmc.FefferyMarkdown(
                 html.Div(style={'height': '100px'})
             ],
             style={
-                'flex': 'auto'
+                'flex': 'auto',
+                'padding': '25px'
             }
         ),
         html.Div(
@@ -130,9 +134,12 @@ fmc.FefferyMarkdown(
             ),
             style={
                 'flex': 'none',
-                'margin': '20px'
+                'padding': '25px'
             }
-        )
+        ),
+
+        # 侧边参数栏
+        side_props.side_props_layout
     ],
     style={
         'display': 'flex'

@@ -5,6 +5,7 @@ import feffery_antd_components as fac
 from dash.dependencies import Input, Output
 
 from server import app
+from views import side_props
 
 docs_content = html.Div(
     [
@@ -239,7 +240,8 @@ def markdown_base_theme_switch(theme):
                 html.Div(style={'height': '100px'})
             ],
             style={
-                'flex': 'auto'
+                'flex': 'auto',
+                'padding': '25px'
             }
         ),
         html.Div(
@@ -251,9 +253,11 @@ def markdown_base_theme_switch(theme):
             ),
             style={
                 'flex': 'none',
-                'margin': '20px'
+                'padding': '25px'
             }
-        )
+        ),
+        # 侧边参数栏
+        side_props.side_props_layout
     ],
     style={
         'display': 'flex'
