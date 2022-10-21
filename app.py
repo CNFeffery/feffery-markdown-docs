@@ -368,7 +368,7 @@ app.clientside_callback(
                     'width': '600px',
                     'height': '100vh',
                     'borderLeft': '1px solid #f0f0f0',
-                    'padding': '20px',
+                    'padding': '0 20px 0 20px',
                     'position': 'relative',
                     'background': '#f2f3f5',
                     'transition': 'width 0.4s ease'

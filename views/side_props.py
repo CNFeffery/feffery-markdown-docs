@@ -58,7 +58,7 @@ side_props_layout = html.Div(
                 'width': '600px',
                 'height': '100vh',
                 'borderLeft': '1px solid #f0f0f0',
-                'padding': '20px',
+                'padding': '0 20px 0 20px',
                 'position': 'relative',
                 'background': '#f2f3f5'
             }
