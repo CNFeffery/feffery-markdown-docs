@@ -63,7 +63,7 @@ $$
                             fuc.FefferySyntaxHighlighter(
                                 showLineNumbers=True,
                                 language='python',
-                                codeString="""
+                                codeString=r"""
 fmc.FefferyMarkdown(
     markdownStr=r'''
 　　这是行LaTeX公式示例：$E=mc^2$
