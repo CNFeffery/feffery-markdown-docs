@@ -13,7 +13,6 @@ docs_content = html.Div(
                     duration=0.6
                 ),
 
-
                 fac.AntdBreadcrumb(
                     items=[
                         {
