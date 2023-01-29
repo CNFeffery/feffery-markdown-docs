@@ -1,7 +1,6 @@
 from dash import html
-import feffery_utils_components as fuc
-import feffery_markdown_components as fmc
 import feffery_antd_components as fac
+import feffery_markdown_components as fmc
 
 docs_content = html.Div(
     [
@@ -11,14 +10,13 @@ docs_content = html.Div(
                     duration=0.6
                 ),
 
-
                 fac.AntdBreadcrumb(
                     items=[
                         {
-                            'title': '更多用法'
+                            'title': '完整参数说明'
                         },
                         {
-                            'title': '完整参数列表'
+                            'title': 'FefferyMarkdown'
                         }
                     ]
                 ),
@@ -28,12 +26,12 @@ docs_content = html.Div(
                 html.Div(
                     [
                         fac.AntdDivider(
-                            'fmc中的全部参数',
+                            '参数说明',
                             lineColor='#f0f0f0',
                             innerTextOrientation='left'
                         ),
                         fmc.FefferyMarkdown(
-                            markdownStr=open('./documents/完整参数列表.md',
+                            markdownStr=open('./documents/FefferyMarkdown参数说明.md',
                                              encoding='utf-8').read()
                         ),
                     ],
@@ -42,7 +40,7 @@ docs_content = html.Div(
                         'padding': '10px 10px 20px 10px',
                         'border': '1px solid #f0f0f0'
                     },
-                    id='fmc中的全部参数',
+                    id='FefferyMarkdown参数说明',
                     className='div-highlight'
                 ),
 
@@ -50,19 +48,6 @@ docs_content = html.Div(
             ],
             style={
                 'flex': 'auto'
-            }
-        ),
-        html.Div(
-            fac.AntdAnchor(
-                linkDict=[
-                    {'title': 'fmc中的全部参数',
-                     'href': '#fmc中的全部参数'}
-                ],
-                offsetTop=0
-            ),
-            style={
-                'flex': 'none',
-                'margin': '20px'
             }
         )
     ],

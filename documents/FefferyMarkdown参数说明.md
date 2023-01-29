@@ -229,3 +229,7 @@
 **facAnchorLinkDict：** *只读属性*
 
 　　 当设置`titleAsId=True`后，若文档中有合法的标题，可以通过回调函数，将此属性作为`fac.AntdAnchor()`中的`linkDict`参数使用，从而实现自动生成交互目录
+
+**wrapLongLines：** *bool*型，默认为`False`
+
+　　用于设置*是否针对代码块中的超长内容行自动换行显示*

@@ -71,7 +71,7 @@ docs_content = html.Div(
                         ),
 
                         fac.AntdCollapse(
-                            fuc.FefferySyntaxHighlighter(
+                            fmc.FefferySyntaxHighlighter(
                                 showLineNumbers=True,
                                 language='python',
                                 codeString="""

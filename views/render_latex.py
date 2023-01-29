@@ -1,7 +1,6 @@
 from dash import html
-import feffery_utils_components as fuc
-import feffery_markdown_components as fmc
 import feffery_antd_components as fac
+import feffery_markdown_components as fmc
 
 from views import side_props
 
@@ -59,7 +58,7 @@ $$
                         ),
 
                         fac.AntdCollapse(
-                            fuc.FefferySyntaxHighlighter(
+                            fmc.FefferySyntaxHighlighter(
                                 showLineNumbers=True,
                                 language='python',
                                 codeString=r"""

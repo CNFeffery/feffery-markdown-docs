@@ -132,11 +132,36 @@ class Config:
                 {
                     'component': 'Item',
                     'props': {
-                        'key': '/all-props',
-                        'href': '/all-props',
-                        'title': '完整参数列表'
+                        'key': '/independent-code-syntax-highlighter-render',
+                        'href': '/independent-code-syntax-highlighter-render',
+                        'title': '独立的代码高亮渲染'
+                    }
+                }
+            ]
+        },
+        {
+            'component': 'ItemGroup',
+            'props': {
+                'key': '/all-props',
+                'title': '完整参数说明'
+            },
+            'children': [
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/markdown-all-props',
+                        'href': '/markdown-all-props',
+                        'title': 'FefferyMarkdown'
                     }
                 },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/syntax-highlighter-all-props',
+                        'href': '/syntax-highlighter-all-props',
+                        'title': 'FefferySyntaxHighlighter'
+                    }
+                }
             ]
         }
     ]

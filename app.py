@@ -7,6 +7,8 @@ from dash.dependencies import Input, Output, State
 from config import Config
 from server import app, server
 from views import (
+    markdown_all_props,
+    syntax_highlighter_all_props,
     what_is_fmc,
     getting_started,
     change_code_theme,
@@ -20,7 +22,7 @@ from views import (
     use_external_theme,
     external_link_redirect,
     auto_render_toc,
-    all_props
+    independent_code_syntax_highlighter_render
 )
 
 app.layout = fuc.FefferyTopProgress(
@@ -67,27 +69,6 @@ app.layout = fuc.FefferyTopProgress(
                     'zIndex': 99999
                 }
             ),
-
-            # 侧边栏折叠按钮
-            # fac.AntdButton(
-            #     fac.AntdIcon(
-            #         id='fold-side-menu-icon',
-            #         icon='antd-menu-fold'
-            #     ),
-            #     id='fold-side-menu',
-            #     size='large',
-            #     type='text',
-            #     style={
-            #         'position': 'fixed',
-            #         'top': '400px',
-            #         'left': 0,
-            #         'zIndex': 99999,
-            #         'padding': '5px 8px',
-            #         'boxShadow': '2px 0 8px #00000026',
-            #         'borderRadius': '0 4px 4px 0',
-            #         'backgroundColor': 'white'
-            #     }
-            # ),
 
             # 页面结构
             fac.AntdRow(
@@ -302,8 +283,14 @@ def render_docs_content(pathname):
     elif pathname == '/auto-render-toc':
         return auto_render_toc.docs_content, pathname
 
-    elif pathname == '/all-props':
-        return all_props.docs_content, pathname
+    elif pathname == '/markdown-all-props':
+        return markdown_all_props.docs_content, pathname
+
+    elif pathname == '/syntax-highlighter-all-props':
+        return syntax_highlighter_all_props.docs_content, pathname
+
+    elif pathname == '/independent-code-syntax-highlighter-render':
+        return independent_code_syntax_highlighter_render.docs_content, pathname
 
     return fac.AntdResult(status='404', title='您访问的页面不存在！'), pathname
 

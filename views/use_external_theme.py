@@ -1,7 +1,6 @@
 from dash import html
-import feffery_utils_components as fuc
-import feffery_markdown_components as fmc
 import feffery_antd_components as fac
+import feffery_markdown_components as fmc
 from dash.dependencies import Input, Output
 
 from server import app
@@ -39,14 +38,7 @@ docs_content = html.Div(
                             href='https://github.com/CNFeffery/feffery-markdown-components/raw/main/fmc-themes/fmc-themes.zip',
                             target='_blank'
                         ),
-                        fac.AntdText('（国内加速'),
-                        html.A(
-                            '下载',
-                            href='https://github.91chi.fun/https://github.com/CNFeffery/feffery-markdown-components/blob/main/fmc-themes/fmc-themes.zip',
-                            target='_blank'
-                        ),
-                        fac.AntdText('），'),
-                        fac.AntdText('将对应的主题包解压复制到到你的'),
+                        fac.AntdText('，将对应的主题包解压复制到到你的'),
                         fac.AntdText('assets', code=True),
                         fac.AntdText('目录中任意位置即可，当前所有可用主题效果如下：')
                     ]
@@ -133,7 +125,7 @@ www.example.com, https://example.com, and contact@example.com.
                         ),
 
                         fac.AntdCollapse(
-                            fuc.FefferySyntaxHighlighter(
+                            fmc.FefferySyntaxHighlighter(
                                 showLineNumbers=True,
                                 language='python',
                                 codeStyle={
