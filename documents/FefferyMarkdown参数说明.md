@@ -233,3 +233,7 @@
 **wrapLongLines：** *bool*型，默认为`False`
 
 　　用于设置*是否针对代码块中的超长内容行自动换行显示*
+
+**codeFallbackLanguage：** *string*型
+
+　　针对`markdownStr`中存在语言类型缺失的代码块，用于设置*强制回滚的语言类型*
