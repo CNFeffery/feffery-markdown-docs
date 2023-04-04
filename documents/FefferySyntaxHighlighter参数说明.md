@@ -33,3 +33,19 @@
 **wrapLongLines：** *bool*型，默认为`False`
 
 　　用于设置*是否针对代码块中的超长内容行自动换行显示*
+
+**addedLineNumbers：** `list[int]`型，默认为`[]`
+
+　　用于设置*需要施加新增效果的代码行下标列表*
+
+**removedLineNumbers：** `list[int]`型，默认为`[]`
+
+　　用于设置*需要施加移除效果的代码行下标列表*
+
+**addedLineStyle：** *dict*型
+
+　　用于设置*新增效果代码行css样式*
+
+**removedLineStyle：** *dict*型
+
+　　用于设置*移除效果代码行css样式*

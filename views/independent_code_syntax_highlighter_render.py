@@ -140,6 +140,66 @@ end
                     className='div-highlight'
                 ),
 
+                html.Div(
+                    [
+                        fmc.FefferySyntaxHighlighter(
+                            codeString='''
+import dash_html_components as html
+import dash_core_components as dcc
+from dash.dependencies import Input, Output, State
+from dash import (
+    html, dcc, Input, Output, State
+)
+
+app = dash.Dash(__name__)
+''',
+                            language='python',
+                            removedLineNumbers=[2, 3, 4],
+                            addedLineNumbers=[5, 6, 7]
+                        ),
+
+                        fac.AntdDivider(
+                            '为代码行渲染diff效果',
+                            lineColor='#f0f0f0',
+                            innerTextOrientation='left'
+                        ),
+
+                        fac.AntdCollapse(
+                            fmc.FefferySyntaxHighlighter(
+                                showLineNumbers=True,
+                                language='python',
+                                codeString="""
+fmc.FefferySyntaxHighlighter(
+    codeString='''
+import dash_html_components as html
+import dash_core_components as dcc
+from dash.dependencies import Input, Output, State
+from dash import (
+    html, dcc, Input, Output, State
+)
+
+app = dash.Dash(__name__)
+''',
+    language='python',
+    removedLineNumbers=[2, 3, 4],
+    addedLineNumbers=[5, 6, 7]
+)
+"""
+                            ),
+                            title='点击查看代码',
+                            is_open=False,
+                            ghost=True
+                        )
+                    ],
+                    style={
+                        'marginBottom': '40px',
+                        'padding': '10px 10px 20px 10px',
+                        'border': '1px solid #f0f0f0'
+                    },
+                    id='为代码行渲染diff效果',
+                    className='div-highlight'
+                ),
+
                 html.Div(style={'height': '100px'})
             ],
             style={
@@ -150,8 +210,14 @@ end
         html.Div(
             fac.AntdAnchor(
                 linkDict=[
-                    {'title': '使用FefferySyntaxHighlighter渲染代码高亮',
-                        'href': '#使用FefferySyntaxHighlighter渲染代码高亮'}
+                    {
+                        'title': '使用FefferySyntaxHighlighter渲染代码高亮',
+                        'href': '#使用FefferySyntaxHighlighter渲染代码高亮'
+                    },
+                    {
+                        'title': '为代码行渲染diff效果',
+                        'href': '#为代码行渲染diff效果'
+                    }
                 ],
                 offsetTop=0
             ),
