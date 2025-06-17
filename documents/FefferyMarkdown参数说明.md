@@ -237,3 +237,23 @@
 **codeFallbackLanguage：** *string*型
 
 　　针对`markdownStr`中存在语言类型缺失的代码块，用于设置*强制回滚的语言类型*
+
+**searchKeyword：** *string*型
+
+　　搜索关键词
+
+**highlightStyle：** *dict*型
+
+　　`searchKeyword`对应搜索结果额外css样式
+
+**highlightClassName：** *str*型
+
+　　`searchKeyword`对应搜索结果额外css类名
+
+**mermaidOptions：** *bool*或*dict*型，默认为`False`
+
+　　针对代码块中的`mermaid`类型代码，配置图表渲染相关功能参数，支持的键值对参数如下：
+
+　　**theme：** *string*型
+
+　　　　`mermaid`图表内置主题，可选项有`'default'`、`'base'`、`'dark'`、`'forest'`、`'neutral'`、`'null'`
