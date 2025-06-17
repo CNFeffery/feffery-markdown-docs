@@ -60,6 +60,14 @@ class Config:
                 {
                     'component': 'Item',
                     'props': {
+                        'key': '/render-mermaid',
+                        'href': '/render-mermaid',
+                        'title': '渲染Mermaid图表'
+                    }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
                         'key': '/support-gfm',
                         'href': '/support-gfm',
                         'title': '支持GFM语法'

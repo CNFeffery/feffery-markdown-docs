@@ -254,6 +254,4 @@
 
 　　针对代码块中的`mermaid`类型代码，配置图表渲染相关功能参数，支持的键值对参数如下：
 
-　　**theme：** *string*型
-
-　　　　`mermaid`图表内置主题，可选项有`'default'`、`'base'`、`'dark'`、`'forest'`、`'neutral'`、`'null'`
+　　**theme：** *string*型，`mermaid`图表内置主题，可选项有`'default'`、`'base'`、`'dark'`、`'forest'`、`'neutral'`、`'null'`
