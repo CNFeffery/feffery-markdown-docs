@@ -5,7 +5,7 @@ import feffery_markdown_components as fmc
 from dash.dependencies import Input, Output, State
 
 from config import Config
-from server import app, server
+from server import app, server  # noqa: F401
 from views import (
     markdown_all_props,
     syntax_highlighter_all_props,
