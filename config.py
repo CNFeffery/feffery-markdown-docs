@@ -144,6 +144,14 @@ class Config:
                         'href': '/independent-code-syntax-highlighter-render',
                         'title': '独立的代码高亮渲染'
                     }
+                },
+                {
+                    'component': 'Item',
+                    'props': {
+                        'key': '/keyword-highlighter',
+                        'href': '/keyword-highlighter',
+                        'title': '关键字高亮'
+                    }
                 }
             ]
         },

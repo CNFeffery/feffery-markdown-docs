@@ -24,6 +24,7 @@ from views import (
     external_link_redirect,
     auto_render_toc,
     independent_code_syntax_highlighter_render,
+    keyword_highlighter,
 )
 
 app.layout = fuc.FefferyTopProgress(
@@ -272,6 +273,9 @@ def render_docs_content(pathname):
 
     elif pathname == "/independent-code-syntax-highlighter-render":
         return independent_code_syntax_highlighter_render.docs_content, pathname
+
+    elif pathname == "/keyword-highlighter":
+        return keyword_highlighter.docs_content, pathname
 
     return fac.AntdResult(status="404", title="您访问的页面不存在！"), pathname
 
