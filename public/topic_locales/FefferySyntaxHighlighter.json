@@ -1,0 +1,18 @@
+{
+    "root_locale": "zh-cn",
+    "topic": "FefferySyntaxHighlighter",
+    "contents": {
+        "基础使用": {
+            "en-us": "Basic usage"
+        },
+        "对常见各类型代码字符串进行语法高亮展示。": {
+            "en-us": "Syntax highlighting for common code string types."
+        },
+        "代码diff效果": {
+            "en-us": "Code diff effect"
+        },
+        "配合参数`removedLineNumbers`、`addedLineNumbers`实现代码diff效果。": {
+            "en-us": "Pair with the parameters `removedLineNumbers` and `addedLineNumbers` to implement code diff effects."
+        }
+    }
+}

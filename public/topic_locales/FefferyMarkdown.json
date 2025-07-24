@@ -1,0 +1,108 @@
+{
+    "root_locale": "zh-cn",
+    "topic": "FefferyMarkdown",
+    "contents": {
+        "基础使用": {
+            "en-us": "Basic usage"
+        },
+        "最基础的markdown内容渲染。": {
+            "en-us": "The basic markdown content rendering."
+        },
+        "更换代码主题": {
+            "en-us": "Change code theme"
+        },
+        "针对代码块内容，设置参数`codeTheme`来更换使用不同的内置代码高亮主题。": {
+            "en-us": "For code block content, set the parameter `codeTheme` to switch to a different built-in code highlighting theme."
+        },
+        "渲染LaTeX公式": {
+            "en-us": "Render LaTeX equations"
+        },
+        "可直接渲染常见的行内、块级**LaTeX**公式，注意字符串需要前缀`r`以避免转义。": {
+            "en-us": "You can directly render common inline and block-level LaTeX equations. Note that the string needs to be prefixed with `r` to avoid escaping."
+        },
+        "渲染Mermaid图表": {
+            "en-us": "Render Mermaid charts"
+        },
+        "支持将**mermaid**类型的代码块直接渲染为图表，注意需要在`dash.Dash()`中通过参数`external_scripts`额外引入此项功能所需的**mermaid**静态资源。": {
+            "en-us": "Support rendering mermaid charts directly as code blocks. Note that it needs to be referenced in the `external_scripts` parameter of `dash.Dash()` to enable this feature."
+        },
+        "支持GFM语法": {
+            "en-us": "Support GFM syntax"
+        },
+        "支持GFM（GitHub Flavored Markdown）中的常用语法。": {
+            "en-us": "Support common syntax in GFM (GitHub Flavored Markdown)."
+        },
+        "渲染原生HTML": {
+            "en-us": "Render native HTML"
+        },
+        "默认不开启原生HTML渲染，如果需要开启，设置参数`renderHtml=True`即可。": {
+            "en-us": "By default, native HTML rendering is turned off. If you need to turn it on, set the parameter `renderHtml=True`."
+        },
+        "改变链接跳转方式": {
+            "en-us": "Change link jump method"
+        },
+        "针对内容中的链接，设置参数`linkTarget`来改变点击链接后的跳转方式。": {
+            "en-us": "For content links, set the parameter `linkTarget` to change the jump method after clicking the link."
+        },
+        "自定义代码块样式": {
+            "en-us": "Custom code block style"
+        },
+        "针对代码块内容，可设置参数`codeBlockStyle`、`codeStyle`进行进一步的样式自定义。": {
+            "en-us": "For code block content, you can set the parameters `codeBlockStyle` and `codeStyle` for further style customization."
+        },
+        "基础图片渲染": {
+            "en-us": "Basic image rendering"
+        },
+        "默认支持markdown中的图片渲染语法，设置参数`renderHtml=True`可支持原生HTML形式的图片渲染。": {
+            "en-us": "By default, markdown image rendering syntax is supported. Set the parameter `renderHtml=True` to support original HTML image rendering syntax."
+        },
+        "交互式图片预览": {
+            "en-us": "Interactive image preview"
+        },
+        "设置参数`imagePreview=True`后，可自针对图片进行交互式预览查看。": {
+            "en-us": "After setting the parameter `imagePreview=True`, you can interactively preview images."
+        },
+        "图片居中显示": {
+            "en-us": "Image center display"
+        },
+        "设置参数`imageForceAlignCenter=True`后，可针对文档中的全部图片进行强制居中显示。": {
+            "en-us": "After setting the parameter `imageForceAlignCenter=True`, you can force all images in the document to be centered."
+        },
+        "统一设置图片宽度": {
+            "en-us": "Uniformly set image width"
+        },
+        "通过参数`imageWidth`可统一设置图片宽度。": {
+            "en-us": "You can set the image width uniformly by setting the parameter `imageWidth`."
+        },
+        "自定义各元素样式": {
+            "en-us": "Custom style of each element"
+        },
+        "针对自定义元素内容，可通过相应的样式参数，进行进一步的样式自定义。": {
+            "en-us": "For custom element content, you can further customize the style by setting the corresponding style parameters."
+        },
+        "使用拓展主题": {
+            "en-us": "Use extended theme"
+        },
+        "配合参数`markdownBaseClassName`可使用拓展主题，可在[此处](https://github.com/CNFeffery/feffery-markdown-components/raw/main/fmc-themes/fmc-themes.zip)下载拓展样式主题包，解压后放入当前应用的`assets`静态资源目录下即可。": {
+            "en-us": "With the parameter `markdownBaseClassName`, you can use the extended theme. You can download the extended style theme package [here](https://github.com/CNFeffery/feffery-markdown-components/raw/main/fmc-themes/fmc-themes.zip), unzip it and put it in the `assets` static resource directory of the current application."
+        },
+        "外部链接重定向": {
+            "en-us": "External link redirection"
+        },
+        "针对文档渲染内容中的外部链接，可进行重定向安全跳转。": {
+            "en-us": "For external links in the rendered document content, you can perform a safe redirection."
+        },
+        "自动生成目录": {
+            "en-us": "Generate table of contents"
+        },
+        "设置参数`titleAsId=True`时，会在渲染后为文档中的所有标题元素添加与其内容一致的`id`信息，同时会产生出属性值`facAnchorLinkDict`，可通过回调函数直接作为[fac](https://fac.feffery.tech)中锚点组件[AntdAnchor](https://fac.feffery.tech/AntdAnchor)的参数`linkDict`，从而实现自动目录生成。": {
+            "en-us": "When the parameter `titleAsId=True` is set, `id` information consistent with its content will be added to all title elements in the document after rendering. At the same time, the attribute value `facAnchorLinkDict` will be generated, which can be directly used as the parameter `linkDict` of the anchor component [AntdAnchor](https://fac.feffery.tech/AntdAnchor) in [fac](https://fac.feffery.tech) through the callback function, so as to realize automatic table of contents generation."
+        },
+        "关键字高亮": {
+            "en-us": "Keyword highlight"
+        },
+        "通过参数`searchKeyword`启用关键字高亮功能。": {
+            "en-us": "Turn on keyword highlight function by setting the parameter `searchKeyword`."
+        }
+    }
+}

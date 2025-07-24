@@ -1,4 +1,8 @@
-dash==2.18.2
-feffery_antd_components==0.1.16
-feffery_markdown_components==0.3.2
-feffery_utils_components==0.0.28
+dash==3.1.1
+feffery_antd_components==0.4.0
+feffery_dash_utils==0.2.6
+feffery_markdown_components==0.4.0
+feffery_utils_components==0.3.0
+mistune==3.0.2
+dash_change_cdn_plugin==0.1.1
+dash_console_filter_plugin==0.1.1

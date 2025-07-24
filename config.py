@@ -1,183 +1,108 @@
-class Config:
-    # 顶端进度条需要忽略的监听目标
-    exclude_props = [
-        'side-menu.style',
-        'fold-side-menu-icon.icon',
-        'markdown-base-theme-demo.markdownBaseClassName',
-        'side-props.style'
-    ]
+import json
+import feffery_markdown_components as fmc
 
-    # 定义侧边菜单树状结构数据
-    menuItems = [
-        {
-            'component': 'ItemGroup',
-            'props': {
-                'key': '/',
-                'title': '快速入门'
+# 国际化
+from i18n import translator
+
+
+class AppConfig:
+    """
+    应用常规参数配置
+    """
+
+    # 应用默认标签页标题
+    title = 'feffery-markdown-components在线文档'
+
+    # 应用logo地址
+    logo_path = 'imgs/fmc-logo.svg'
+
+    # 页首标题
+    page_header_title = 'feffery-markdown-components'
+
+    # 当前组件版本
+    library_version = fmc.__version__
+
+    # 组件仓库地址
+    library_repo = 'https://github.com/CNFeffery/feffery-markdown-components'
+
+    # 文档仓库地址
+    doc_library_repo = 'https://github.com/CNFeffery/feffery-markdown-docs'
+
+    # 文档Gitee仓库地址
+    doc_gitee_library_repo = 'https://gitee.com/cnfeffery/feffery-markdown-docs'
+
+    # 文档仓库分支名称
+    doc_library_branch = 'main'
+
+    # 当前应用是否为正式发布模式
+    is_release = True
+
+    # 文档贡献者信息
+    doc_contributors = json.load(open('./public/contributors.json'))
+
+    # 项目国际化指南地址
+    i18n_guide_link = (
+        'https://github.com/CNFeffery/feffery-utils-docs/issues/166'
+    )
+
+    @staticmethod
+    def side_menu_items() -> list:
+        # 侧边菜单栏数据结构
+        return [
+            {
+                'component': 'ItemGroup',
+                'props': {'key': '快速入门', 'title': translator.t('快速入门')},
+                'children': [
+                    {
+                        'component': 'Item',
+                        'props': {
+                            'key': '/what-is-fmc',
+                            'name': '/what-is-fmc',
+                            'href': '/what-is-fmc',
+                            'title': translator.t('fmc是什么'),
+                        },
+                    }
+                ],
             },
-            'children': [
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/what-is-fmc',
-                        'href': '/what-is-fmc',
-                        'title': 'fmc是什么？'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/getting-started',
-                        'href': '/getting-started',
-                        'title': 'Dash+fmc 快速上手'
-                    }
-                }
-            ]
-        },
-        {
-            'component': 'ItemGroup',
-            'props': {
-                'key': '/',
-                'title': '更多用法'
+            {'component': 'Divider', 'props': {'dashed': True}},
+            {
+                'component': 'ItemGroup',
+                'props': {'key': '组件介绍', 'title': translator.t('组件介绍')},
+                'children': [
+                    {
+                        'component': 'Item',
+                        'props': {
+                            'key': '/FefferyMarkdown',
+                            'name': '/FefferyMarkdown',
+                            'title': translator.t(
+                                'FefferyMarkdown markdown渲染'
+                            ),
+                            'href': '/FefferyMarkdown',
+                        },
+                    },
+                    {
+                        'component': 'Item',
+                        'props': {
+                            'key': '/FefferySyntaxHighlighter',
+                            'name': '/FefferySyntaxHighlighter',
+                            'title': translator.t(
+                                'FefferySyntaxHighlighter 代码语法高亮'
+                            ),
+                            'href': '/FefferySyntaxHighlighter',
+                        },
+                    },
+                ],
             },
-            'children': [
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/change-code-theme',
-                        'href': '/change-code-theme',
-                        'title': '切换代码主题'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/render-latex',
-                        'href': '/render-latex',
-                        'title': '渲染LaTeX公式'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/render-mermaid',
-                        'href': '/render-mermaid',
-                        'title': '渲染Mermaid图表'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/support-gfm',
-                        'href': '/support-gfm',
-                        'title': '支持GFM语法'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/render-raw-html',
-                        'href': '/render-raw-html',
-                        'title': '渲染原生HTML'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/change-link-target',
-                        'href': '/change-link-target',
-                        'title': '改变链接打开方式'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/custom-code-block-style',
-                        'href': '/custom-code-block-style',
-                        'title': '自定义代码块样式'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/render-image',
-                        'href': '/render-image',
-                        'title': '渲染图片内容'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/custom-element-style',
-                        'href': '/custom-element-style',
-                        'title': '自定义各元素样式'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/use-external-theme',
-                        'href': '/use-external-theme',
-                        'title': '使用拓展主题'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/external-link-redirect',
-                        'href': '/external-link-redirect',
-                        'title': '外部链接安全跳转'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/auto-render-toc',
-                        'href': '/auto-render-toc',
-                        'title': '自动生成目录'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/independent-code-syntax-highlighter-render',
-                        'href': '/independent-code-syntax-highlighter-render',
-                        'title': '独立的代码高亮渲染'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/keyword-highlighter',
-                        'href': '/keyword-highlighter',
-                        'title': '关键字高亮'
-                    }
-                }
-            ]
-        },
-        {
-            'component': 'ItemGroup',
-            'props': {
-                'key': '/all-props',
-                'title': '完整参数说明'
-            },
-            'children': [
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/markdown-all-props',
-                        'href': '/markdown-all-props',
-                        'title': 'FefferyMarkdown'
-                    }
-                },
-                {
-                    'component': 'Item',
-                    'props': {
-                        'key': '/syntax-highlighter-all-props',
-                        'href': '/syntax-highlighter-all-props',
-                        'title': 'FefferySyntaxHighlighter'
-                    }
-                }
-            ]
-        }
-    ]
+        ]
+
+    # 侧边菜单栏key值 -> 展开项节点key值数组
+    side_menu_expand_keys = {}
+
+
+class DocsConfig:
+    """
+    文档所需特殊参数配置
+    """
+
+    # 具有额外参数说明的组件
+    components_with_extra_params = []
