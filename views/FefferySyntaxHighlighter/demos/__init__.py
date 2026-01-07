@@ -4,6 +4,7 @@ from dash.dependencies import Component
 from . import (
     basic_usage,  # noqa: F401
     diff,  # noqa: F401
+    starting_line_number,  # noqa: F401
 )
 from components import demos_render
 
@@ -25,6 +26,11 @@ def demos_config() -> list:
             'description': t(
                 '配合参数`removedLineNumbers`、`addedLineNumbers`实现代码diff效果。'
             ),
+        },
+        {
+            'path': 'starting_line_number',
+            'title': t('起始行号'),
+            'description': t('基于参数`startingLineNumber`设置起始行号。'),
         },
     ]
 

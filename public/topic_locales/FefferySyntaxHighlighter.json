@@ -13,6 +13,12 @@
         },
         "配合参数`removedLineNumbers`、`addedLineNumbers`实现代码diff效果。": {
             "en-us": "Pair with the parameters `removedLineNumbers` and `addedLineNumbers` to implement code diff effects."
+        },
+        "起始行号": {
+            "en-us": "Starting line number"
+        },
+        "基于参数`startingLineNumber`设置起始行号。": {
+            "en-us": "Based on the parameter `startingLineNumber` to set the starting line number."
         }
     }
 }
